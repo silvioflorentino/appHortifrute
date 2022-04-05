@@ -8,47 +8,15 @@ const request = async (callback) => {
 };
 
 
-
-fetch('https://jsonplaceholder.typicode.com/posts', {
-  method: 'POST',
-  body: JSON.stringify({
-    title: 'foo',
-    body: 'bar',
-    userId: 1,
-  }),
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  },
-})
-  .then((response) => response.json())
-  .then((json) => console.log(json));
-
 export default function App() {
 
   const [registros, setRegistros] = useState([]);
-const [campo_2, setCampo_2] = useState([]);
-const [campo_3, setCampo_3] = useState([]);
-const [campo_4, setCampo_4] = useState([]);
 
 useEffect(() => {
   request(setRegistros);
 
 
-    const requestOptions = {
-  method: 'POST',
-  headers: {'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    campo_2:'sil',
-    campo_3:'sil',
-    campo_4:'sil',
-  })
-    };
-
-fetch('https://apisilvio.azurewebsites.net/v1/api.php?apicall=createFrutas', requestOptions)
-.then(response => response.json())
-.then(data => setCampo_2(data.campo_2));
-  },[]);
-
+   
 
   return (
     <View style={estilo.container}>
