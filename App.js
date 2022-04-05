@@ -14,10 +14,8 @@ export default function App() {
 
 useEffect(() => {
   request(setRegistros);
-
-
-   
-
+},[]);
+  
   return (
     <View style={estilo.container}>
       <View>
